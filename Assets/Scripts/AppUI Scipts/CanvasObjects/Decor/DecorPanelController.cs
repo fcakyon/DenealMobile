@@ -4,37 +4,88 @@ using UnityEngine;
 
 public class DecorPanelController : MonoBehaviour {
 
+    public GameObject decorPopupPanelBig;
     public GameObject decorPopupPanel;
     public GameObject decorInfoPanel;
+    private DecorPopupPanelBigController decorPopupPanelBigController;
     private DecorPopupPanelController decorPopupPanelController;
     private DecorPopupPanelController decorInfoPanelController;
 
+    // Objects to toggle visibility
+    public CanvasGroup addButton;
+    public GameObject addNotification;
+
+    private void Start()
+    {
+        decorPopupPanelBigController = decorPopupPanelBig.GetComponent<DecorPopupPanelBigController>();
+        decorPopupPanelController = decorPopupPanel.GetComponent<DecorPopupPanelController>();
+        decorInfoPanelController = decorInfoPanel.GetComponent<DecorPopupPanelController>();
+    }
+
+    public void ClosePopupPanelBig()
+    {
+        if (decorPopupPanelBigController.isPanelOpen)
+        {
+            decorPopupPanelBigController.ClosePanel();
+            addButton.alpha = 1;
+        }
+    }
+
+    public void OpenPopupPaneBig()
+    {
+        if (!decorPopupPanelBigController.isPanelOpen)
+        {
+            decorPopupPanelBigController.OpenPanel();
+            addButton.alpha = 0;
+            if (DenealManager.Instance.is3DScene)
+            {
+                addNotification.SetActive(false);
+            }
+        }
+    }
+
     public void ClosePopupPanel()
     {
-        decorPopupPanelController = decorPopupPanel.GetComponent<DecorPopupPanelController>();
-        decorPopupPanelController.ClosePanel();
+        if(decorPopupPanelController.isPanelOpen)
+        {
+            decorPopupPanelController.ClosePanel();
+
+            addButton.alpha = 1;
+        }
     }
 
     public void OpenPopupPanel()
     {
-        decorPopupPanelController = decorPopupPanel.GetComponent<DecorPopupPanelController>();
-        decorPopupPanelController.OpenPanel();
+        if (!decorPopupPanelController.isPanelOpen)
+        {
+            decorPopupPanelController.OpenPanel();
+            addButton.alpha = 0;
+            if (DenealManager.Instance.is3DScene)
+            {
+                addNotification.SetActive(false);
+            }
+        }
     }
 
     public void CloseInfoPanel()
     {
-        decorInfoPanelController = decorInfoPanel.GetComponent<DecorPopupPanelController>();
-        decorInfoPanelController.ClosePanel();
+        if (decorInfoPanelController.isPanelOpen)
+        {
+            decorInfoPanelController.ClosePanel();
+        }
     }
 
     public void OpenInfoPanel()
     {
-        decorInfoPanelController = decorInfoPanel.GetComponent<DecorPopupPanelController>();
-        decorInfoPanelController.OpenPanel();
+        if (!decorInfoPanelController.isPanelOpen)
+        {
+            decorInfoPanelController.OpenPanel();
+        }
     }
 
     public void CloseAllPanels()
     {
+        ClosePopupPanelBig();
         ClosePopupPanel();
         CloseInfoPanel();
     }

@@ -63,14 +63,14 @@ public class DecorModelLister : MonoBehaviour {
             GameObject modelButton = Instantiate(modelButtonPrefab);
 
             if(Application.platform == RuntimePlatform.Android)
-                modelButton.GetComponent<DecorModelConnection>().assetBundleUrl = model.prefabLinks.android;
+                modelButton.GetComponent<DenealModelConnection>().assetBundleUrl = model.prefabLinks.android;
             else
-                modelButton.GetComponent<DecorModelConnection>().assetBundleUrl = model.prefabLinks.ios;
+                modelButton.GetComponent<DenealModelConnection>().assetBundleUrl = model.prefabLinks.ios;
 
-            modelButton.GetComponent<DecorModelConnection>().height = model.height;
-            modelButton.GetComponent<DecorModelConnection>().info = model.info;
+            modelButton.GetComponent<DenealModelConnection>().height = model.height;
+            modelButton.GetComponent<DenealModelConnection>().info = model.info;
 
-            Transform content = modelButton.transform.GetChild(0);
+            Transform content = modelButton.transform.Find("Content");
             Text text = content.Find("Text").GetComponent<Text>();
             text.text = model.name;
 

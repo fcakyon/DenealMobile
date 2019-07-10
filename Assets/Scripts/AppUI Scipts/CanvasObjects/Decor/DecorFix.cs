@@ -7,15 +7,15 @@ public class DecorFix : MonoBehaviour, IClickable
 {
     public void ChangeVisibility()
     {
-        switch (DecorManager.Instance.UiState)
+        switch (DenealManager.Instance.UiState)
         {
-            case DecorManager.UIStates.AutoPlace:
+            case DenealManager.UIStates.AutoPlace:
                 gameObject.SetActive(true);
                 break;
-            case DecorManager.UIStates.Idle:
+            case DenealManager.UIStates.Idle:
                 gameObject.SetActive(false);
                 break;
-            case DecorManager.UIStates.Loading:
+            case DenealManager.UIStates.Loading:
                 gameObject.SetActive(false);
                 break;
         }
@@ -23,14 +23,14 @@ public class DecorFix : MonoBehaviour, IClickable
 
     public void ClickHandler()
     {
-        DecorManager.Instance.Fix();
+        DenealManager.Instance.Fix();
         DecorAnimManager.Instance.showFixAnimation = false;
     }
 
     void Start ()
     {
         gameObject.GetComponent<Button>().onClick.AddListener(ClickHandler);
-        DecorManager.Instance.OnUIStateChange.AddListener(ChangeVisibility);
+        DenealManager.Instance.OnUIStateChange.AddListener(ChangeVisibility);
         ChangeVisibility();
     }
 

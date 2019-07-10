@@ -7,15 +7,15 @@ public class DecorReset : MonoBehaviour, IClickable {
 
     public void ChangeVisibility()
     {
-        switch (DecorManager.Instance.UiState)
+        switch (DenealManager.Instance.UiState)
         {
-            case DecorManager.UIStates.AutoPlace:
+            case DenealManager.UIStates.AutoPlace:
                 gameObject.SetActive(false);
                 break;
-            case DecorManager.UIStates.Idle:
+            case DenealManager.UIStates.Idle:
                 gameObject.SetActive(true);
                 break;
-            case DecorManager.UIStates.Loading:
+            case DenealManager.UIStates.Loading:
                 gameObject.SetActive(false);
                 break;
         }
@@ -23,12 +23,12 @@ public class DecorReset : MonoBehaviour, IClickable {
 
     public void ClickHandler()
     {
-        DecorManager.Instance.Reset();
+        DenealManager.Instance.Reset();
     }
 
     void Start () {
         gameObject.GetComponent<Button>().onClick.AddListener(ClickHandler);
-        DecorManager.Instance.OnUIStateChange.AddListener(ChangeVisibility);
+        DenealManager.Instance.OnUIStateChange.AddListener(ChangeVisibility);
         ChangeVisibility();
     }
 	

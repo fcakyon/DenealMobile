@@ -10,15 +10,14 @@ public class DecorXRManager : MonoBehaviour {
     {
         DecorAnimManager.Instance.Border2None();
         DecorAnimManager.Instance.CircularPlaneAnim();
-        DecorManager.Instance.hasSurfaceFound = true;
+        DenealManager.Instance.hasSurfaceFound = true;
         // Setting model visible after surface has found
-        if (DecorManager.Instance.hasConnectionAndModel) {
+        if (DenealManager.Instance.hasConnectionAndModel) {
             float modelScale = 1f;
-            DecorManager.Instance.DecorModelConnection.SetModelScale(modelScale);
+            DenealManager.Instance.DecorModelConnection.SetModelScale(modelScale);
         }
         else
         {
-            DecorAnimManager.Instance.DummyAdd();
         }
         canvas.SetActive(true);
     }

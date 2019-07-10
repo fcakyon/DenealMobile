@@ -5,17 +5,17 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Linq;
 
-public class DecorManager : MonoBehaviour
+public class DenealManager : MonoBehaviour
 {
-    public static DecorManager Instance { get; private set; }
+    public static DenealManager Instance { get; private set; }
     [HideInInspector]
-    private DecorModelConnection decorModelConnection;
+    private DenealModelConnection decorModelConnection;
     public LayerMask planeLayerMask;
-    public float modelLerpSpeed = 4f;
-    public bool isPlacing;
+    private float modelLerpSpeed = 4f;
+    private bool isPlacing;
     public Vector3 lastPlacementPos;
     GameObject surfacePlane;
-    public Dictionary<GameObject, DecorModelConnection> allModelsDict = new Dictionary<GameObject, DecorModelConnection>();
+    public Dictionary<GameObject, DenealModelConnection> allModelsDict = new Dictionary<GameObject, DenealModelConnection>();
     public bool is3DScene;
     public enum UIStates { Idle, Loading, AutoPlace };
     private UIStates uiState; // Set to Idle Initially
@@ -53,14 +53,14 @@ public class DecorManager : MonoBehaviour
     }
 
 
-    public DecorModelConnection DecorModelConnection
+    public DenealModelConnection DecorModelConnection
     {
         get { return decorModelConnection; }
         set
         {
             if (value != null)
             {
-                DecorModelConnection decorModelConnectionGameObject = Instantiate(value);
+                DenealModelConnection decorModelConnectionGameObject = Instantiate(value);
                 decorModelConnection = decorModelConnectionGameObject;
             }
         }
@@ -142,7 +142,7 @@ public class DecorManager : MonoBehaviour
          DecorModelConnection.DestroyDecorModel();
     }
 
-    public void AddModelToDict(GameObject decorModel, DecorModelConnection decorModelConnection)
+    public void AddModelToDict(GameObject decorModel, DenealModelConnection decorModelConnection)
     {
         allModelsDict.Add(decorModel, decorModelConnection);
     }
@@ -171,7 +171,7 @@ public class DecorManager : MonoBehaviour
 
             // start scene transition animation
             yield return StartCoroutine(DecorAnimManager.Instance.None2FullCoroutine());
-            yield return SceneManager.LoadSceneAsync("DecorARScene");
+            yield return SceneManager.LoadSceneAsync("DenealARScene");
 
             // Setting model invisible after scene change till surface is found
             if (hasConnectionAndModel)
@@ -201,7 +201,7 @@ public class DecorManager : MonoBehaviour
             canvas.SetActive(false);
 
             yield return StartCoroutine(DecorAnimManager.Instance.None2FullCoroutine());
-            yield return SceneManager.LoadSceneAsync("Decor3DScene");
+            yield return SceneManager.LoadSceneAsync("Deneal3DScene");
 
             // show canvas after scene is loaded
             canvas = GameObject.Find("Canvas").gameObject;

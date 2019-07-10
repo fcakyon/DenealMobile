@@ -52,9 +52,9 @@ public class Decor3DTouchManager : MonoBehaviour {
 
     public void OneFingerRotate()
     {
-        if (DecorManager.Instance.DecorModelConnection != null)
+        if (DenealManager.Instance.DecorModelConnection != null)
         {
-            if (DecorManager.Instance.DecorModelConnection.DecorModel != null)
+            if (DenealManager.Instance.DecorModelConnection.DecorModel != null)
             {
                 if (Input.touchCount == 1)
                 {
@@ -136,7 +136,7 @@ public class Decor3DTouchManager : MonoBehaviour {
                     newScale += pinchAmount * newScale;
 
                     // rescale model
-                    ModelScaleTransformer.CustomModelScale3D(DecorManager.Instance.DecorModelConnection.DecorModel, newScale);
+                    ModelScaleTransformer.CustomModelScale3D(DenealManager.Instance.DecorModelConnection.DecorModel, newScale);
 
                 }
             }

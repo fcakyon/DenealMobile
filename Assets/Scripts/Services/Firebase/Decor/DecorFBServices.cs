@@ -60,8 +60,8 @@ public class DecorFBServices : MonoBehaviour
         UnityWebRequest request = UnityWebRequest.Get(Api.AllModels + modelId);
         yield return request.SendWebRequest();
         Model model = JsonUtility.FromJson<Model>(request.downloadHandler.text);
-        gameObject.AddComponent<DecorModelConnection>();
-        DecorModelConnection decorModelConnection = gameObject.GetComponent<DecorModelConnection>();
+        gameObject.AddComponent<DenealModelConnection>();
+        DenealModelConnection decorModelConnection = gameObject.GetComponent<DenealModelConnection>();
 
         if (Application.platform == RuntimePlatform.Android)
         {

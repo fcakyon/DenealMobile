@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DecorModelConnection : MonoBehaviour
+public class DenealModelConnection : MonoBehaviour
 {
     public GameObject decorModel;
     public string assetBundleUrl;
@@ -40,7 +40,7 @@ public class DecorModelConnection : MonoBehaviour
 
     public void SetModelScale(float modelScale)
     {
-        if (DecorManager.Instance.is3DScene)
+        if (DenealManager.Instance.is3DScene)
         {
             ModelScaleTransformer.CustomModelScale3D(decorModel, modelScale);
         }
@@ -65,8 +65,8 @@ public class DecorModelConnection : MonoBehaviour
     private void OnDestroy()
     {
 
-        if(DecorManager.Instance.allModelsDict.ContainsKey(decorModel))
-            DecorManager.Instance.allModelsDict.Remove(decorModel);
+        if(DenealManager.Instance.allModelsDict.ContainsKey(decorModel))
+            DenealManager.Instance.allModelsDict.Remove(decorModel);
         if (bundle != null)
         {
             bundle.Unload(false);

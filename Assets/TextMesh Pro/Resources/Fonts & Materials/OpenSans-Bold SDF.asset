@@ -18,12 +18,12 @@ MonoBehaviour:
   m_fontInfo:
     Name: Open Sans
     PointSize: 38
-    Scale: 0
+    Scale: 1
     CharacterCount: 233
     LineHeight: 51.75
     Baseline: 0
     Ascender: 40.625
-    CapHeight: 0
+    CapHeight: 27.125
     Descender: -11.125
     CenterLine: 0
     SuperscriptOffset: 40.625
@@ -33,7 +33,7 @@ MonoBehaviour:
     UnderlineThickness: 1.8925781
     strikethrough: 10.727273
     strikethroughThickness: 1.8925781
-    TabWidth: 0
+    TabWidth: 98.75
     Padding: 5
     AtlasWidth: 512
     AtlasHeight: 512
@@ -42,10 +42,10 @@ MonoBehaviour:
   - id: 32
     x: 6
     y: 517
-    width: 0
-    height: 0
+    width: 9.875
+    height: 51.75
     xOffset: 0
-    yOffset: 0
+    yOffset: 40.625
     xAdvance: 9.875
     scale: 1
   - id: 33
@@ -2263,9 +2263,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0

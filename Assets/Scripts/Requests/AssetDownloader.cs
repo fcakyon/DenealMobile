@@ -33,17 +33,17 @@ public class AssetDownloader : MonoBehaviour {
         }
     }
 
-    public void ModelSelectHandler(DecorModelConnection decorModelConnection)
+    public void ModelSelectHandler(DenealModelConnection decorModelConnection)
     {
-        if (!DecorManager.Instance.is3DScene
-            || DecorManager.Instance.DecorModelConnection == null
-            || decorModelConnection.assetBundleUrl != DecorManager.Instance.DecorModelConnection.assetBundleUrl)
+        if (!DenealManager.Instance.is3DScene
+            || DenealManager.Instance.DecorModelConnection == null
+            || decorModelConnection.assetBundleUrl != DenealManager.Instance.DecorModelConnection.assetBundleUrl)
         {
             if (coroutine != null) StopCoroutine(coroutine);
             if (request != null && !request.isDone) request.Abort();
             coroutine = DownloadAssetBundleAndSetDecorModel();
-            if (DecorManager.Instance.is3DScene) DecorManager.Instance.RemoveConnection();
-            DecorManager.Instance.DecorModelConnection = decorModelConnection;
+            if (DenealManager.Instance.is3DScene) DenealManager.Instance.RemoveConnection();
+            DenealManager.Instance.DecorModelConnection = decorModelConnection;
             StartCoroutine(coroutine);
         }
 
@@ -70,19 +70,19 @@ public class AssetDownloader : MonoBehaviour {
     IEnumerator DownloadAssetBundleAndSetDecorModel()
     {
         bool hasBundleLoadedBefore = false;
-        DecorManager.Instance.UiState = DecorManager.UIStates.Loading;
-        foreach (DecorModelConnection connection in DecorManager.Instance.allModelsDict.Values)
+        DenealManager.Instance.UiState = DenealManager.UIStates.Loading;
+        foreach (DenealModelConnection connection in DenealManager.Instance.allModelsDict.Values)
         {
-            if (connection.assetBundleUrl == DecorManager.Instance.DecorModelConnection.assetBundleUrl)
+            if (connection.assetBundleUrl == DenealManager.Instance.DecorModelConnection.assetBundleUrl)
             {
                 hasBundleLoadedBefore = true;
-                DecorManager.Instance.DecorModelConnection.DecorModel = Instantiate(connection.DecorModel);
+                DenealManager.Instance.DecorModelConnection.DecorModel = Instantiate(connection.DecorModel);
                 break;
             }
         }
         if (!hasBundleLoadedBefore)
         {
-            request = UnityWebRequestAssetBundle.GetAssetBundle(DecorManager.Instance.DecorModelConnection.assetBundleUrl, 0, 0);
+            request = UnityWebRequestAssetBundle.GetAssetBundle(DenealManager.Instance.DecorModelConnection.assetBundleUrl, 0, 0);
             request.SendWebRequest();
             while (!request.isDone)
             {
@@ -91,12 +91,12 @@ public class AssetDownloader : MonoBehaviour {
                 yield return null;
             }
             AssetBundle downloadedBundle = DownloadHandlerAssetBundle.GetContent(request);
-            DecorManager.Instance.DecorModelConnection.bundle = downloadedBundle;
-            GameObject decorModelAsset = DecorManager.Instance.DecorModelConnection.bundle.LoadAsset<GameObject>(DecorManager.Instance.DecorModelConnection.prefabName);
-            DecorManager.Instance.DecorModelConnection.DecorModel = Instantiate(decorModelAsset, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+            DenealManager.Instance.DecorModelConnection.bundle = downloadedBundle;
+            GameObject decorModelAsset = DenealManager.Instance.DecorModelConnection.bundle.LoadAsset<GameObject>(DenealManager.Instance.DecorModelConnection.prefabName);
+            DenealManager.Instance.DecorModelConnection.DecorModel = Instantiate(decorModelAsset, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
         }
 
-        DecorManager.Instance.AddModelToDict(DecorManager.Instance.DecorModelConnection.DecorModel, DecorManager.Instance.DecorModelConnection);
-        DecorManager.Instance.ChangeStateAfterLoading();
+        DenealManager.Instance.AddModelToDict(DenealManager.Instance.DecorModelConnection.DecorModel, DenealManager.Instance.DecorModelConnection);
+        DenealManager.Instance.ChangeStateAfterLoading();
     }
 }

@@ -5,13 +5,13 @@ using UnityEngine;
 public class DecorLoadingHandler : MonoBehaviour {
 
 	void Start () {
-        DecorManager.Instance.OnUIStateChange.AddListener(ChangeVisibility);
+        DenealManager.Instance.OnUIStateChange.AddListener(ChangeVisibility);
         gameObject.SetActive(false);
     }
 
     void ChangeVisibility()
     {
-        if (DecorManager.Instance.UiState == DecorManager.UIStates.Loading)
+        if (DenealManager.Instance.UiState == DenealManager.UIStates.Loading)
             gameObject.SetActive(true);
         else gameObject.SetActive(false);
     }
