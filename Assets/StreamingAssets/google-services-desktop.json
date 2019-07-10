@@ -11,7 +11,7 @@
       }, 
       "oauth_client": [
         {
-          "client_id": "966641733414-40k2e1q4is1vedcbsdel7a4nlrlj4k5e.apps.googleusercontent.com"
+          "client_id": "966641733414-lneum992t5l04bbnu81ur7qgou2m40tm.apps.googleusercontent.com"
         }
       ], 
       "api_key": [
@@ -20,9 +20,9 @@
         }
       ], 
       "client_info": {
-        "mobilesdk_app_id": "1:966641733414:ios:78c0f5a0488fd20b", 
+        "mobilesdk_app_id": "1:966641733414:ios:713e941afe3f4208", 
         "android_client_info": {
-          "package_name": "com.diyar.denealar"
+          "package_name": "com.diyar.denealfit"
         }
       }
     }

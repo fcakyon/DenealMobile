@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>966641733414-40k2e1q4is1vedcbsdel7a4nlrlj4k5e.apps.googleusercontent.com</string>
+	<string>966641733414-lneum992t5l04bbnu81ur7qgou2m40tm.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.966641733414-40k2e1q4is1vedcbsdel7a4nlrlj4k5e</string>
+	<string>com.googleusercontent.apps.966641733414-lneum992t5l04bbnu81ur7qgou2m40tm</string>
 	<key>API_KEY</key>
 	<string>AIzaSyC5lqgRLMK-UfxYXw-eoBWdcTLljx5xj1o</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.diyar.denealar</string>
+	<string>com.diyar.denealfit</string>
 	<key>PROJECT_ID</key>
 	<string>diyar-unity</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:966641733414:ios:78c0f5a0488fd20b</string>
+	<string>1:966641733414:ios:713e941afe3f4208</string>
 	<key>DATABASE_URL</key>
 	<string>https://diyar-unity.firebaseio.com</string>
 </dict>

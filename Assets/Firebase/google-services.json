@@ -32,10 +32,46 @@
               "client_type": 3
             },
             {
-              "client_id": "966641733414-40k2e1q4is1vedcbsdel7a4nlrlj4k5e.apps.googleusercontent.com",
+              "client_id": "966641733414-lneum992t5l04bbnu81ur7qgou2m40tm.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.diyar.denealar"
+                "bundle_id": "com.diyar.denealfit"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966641733414:android:713e941afe3f4208",
+        "android_client_info": {
+          "package_name": "com.diyar.denealfit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966641733414-e4rla8dgcuh3o6ri8erbc4qq51ealra5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi87rc43K6A363XH77unniOAqL8CwN0IM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966641733414-e4rla8dgcuh3o6ri8erbc4qq51ealra5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "966641733414-lneum992t5l04bbnu81ur7qgou2m40tm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.diyar.denealfit"
               }
             }
           ]
