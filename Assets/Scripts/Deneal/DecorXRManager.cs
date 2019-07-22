@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DecorXRManager : MonoBehaviour {
 
+    public GameObject infoPanel;
     public GameObject canvas;
 
     public void OnSurfaceAttach()
@@ -13,13 +14,14 @@ public class DecorXRManager : MonoBehaviour {
         DenealManager.Instance.hasSurfaceFound = true;
         // Setting model visible after surface has found
         if (DenealManager.Instance.hasConnectionAndModel) {
-            float modelScale = 1f;
-            DenealManager.Instance.DecorModelConnection.SetModelScale(modelScale);
+            //float modelScale = 1f; //needs to be uncommented for model to be visible
+            //DenealManager.Instance.DecorModelConnection.SetModelScale(modelScale);
         }
         else
         {
         }
-        canvas.SetActive(true);
+        //canvas.SetActive(true); //needs to be uncommented for Canvas2 to be visible
+        //infoPanel.SetActive(true);
     }
 
     public void OnSurfaceSwitch()

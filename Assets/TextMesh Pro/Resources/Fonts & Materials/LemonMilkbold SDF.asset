@@ -11,19 +11,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: LemonMilkbold SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -535889934
   material: {fileID: 21804313347327878}
-  materialHashCode: 0
+  materialHashCode: -2006062535
   fontAssetType: 1
   m_fontInfo:
     Name: Lemon/Milk
     PointSize: 32
-    Scale: 0
+    Scale: 1
     CharacterCount: 201
     LineHeight: 45.375
     Baseline: 0
     Ascender: 35.375
-    CapHeight: 0
+    CapHeight: 25.1875
     Descender: -10
     CenterLine: 0
     SuperscriptOffset: 35.375
@@ -33,7 +33,7 @@ MonoBehaviour:
     UnderlineThickness: 5
     strikethrough: 9.227273
     strikethroughThickness: 5
-    TabWidth: 0
+    TabWidth: 93.75
     Padding: 5
     AtlasWidth: 512
     AtlasHeight: 512
@@ -42,10 +42,10 @@ MonoBehaviour:
   - id: 32
     x: 6
     y: 517
-    width: 0
-    height: 0
+    width: 9.375
+    height: 45.375
     xOffset: 0
-    yOffset: 0
+    yOffset: 35.375
     xAdvance: 9.375
     scale: 1
   - id: 33
@@ -1975,9 +1975,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0

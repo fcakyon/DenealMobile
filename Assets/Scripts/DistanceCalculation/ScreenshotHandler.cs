@@ -34,12 +34,12 @@ public class ScreenshotHandler : MonoBehaviour
         RenderTexture renderTexture = new RenderTexture(Camera.main.pixelWidth, Camera.main.pixelHeight, 0, RenderTextureFormat.ARGB32);
         Graphics.Blit(null, renderTexture, xrMat);
 
-        var dirPath = "Assets/Resources/Snapshots/";
-        if (!Directory.Exists(dirPath))
-        {
-            Directory.CreateDirectory(dirPath);
-        }
-        var timeStamp = System.DateTime.Now.ToString("yyyyMMddHHmmssfff");
+        //var dirPath = "Assets/Resources/Snapshots/";
+        //if (!Directory.Exists(dirPath))
+        //{
+        //    Directory.CreateDirectory(dirPath);
+        //}
+        //var timeStamp = System.DateTime.Now.ToString("yyyyMMddHHmmssfff");
 
         SendTextureAsPNG(renderTexture);
         //SaveTextureAsPNG(renderTexture, dirPath + timeStamp + ".jpg");

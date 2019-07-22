@@ -35,11 +35,13 @@ public class CalculateDistance : MonoBehaviour
 
         int originalHeight = Camera.main.pixelHeight;
         int originalWidth = Camera.main.pixelWidth;
+        //int newHeight = Mathf.Min(Camera.main.pixelHeight,768);
+        //int newWidth = Mathf.Min(Camera.main.pixelWidth, 768);
         int newHeight = Camera.main.pixelHeight;
         int newWidth = Camera.main.pixelWidth;
         Vector2[,] resizedIndexes = NearestNeightborResize(originalHeight, originalWidth, newHeight, newWidth);
 
-        float[,] pixelDistances = new float[newHeight, newWidth];
+        //float[,] pixelDistances = new float[newHeight, newWidth];
         float[,] pixelPositionsX = new float[newHeight, newWidth];
         float[,] pixelPositionsY = new float[newHeight, newWidth];
 

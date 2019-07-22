@@ -127,6 +127,7 @@ public class CreateJSON : MonoBehaviour {
     {
         public float[] pixelPositionsX;
         public float[] pixelPositionsY;
+        //public float[] imageSize;
         public float[] linePosition;
         public float lineAngle;
     }
@@ -149,6 +150,7 @@ public class CreateJSON : MonoBehaviour {
         PixelPositionsObject jsonObject = new PixelPositionsObject();
         jsonObject.pixelPositionsX = pixelPositionsX;
         jsonObject.pixelPositionsY = pixelPositionsY;
+        //jsonObject.imageSize = imageSize;
         jsonObject.linePosition = linePosition;
         jsonObject.lineAngle = lineAngle;
 
